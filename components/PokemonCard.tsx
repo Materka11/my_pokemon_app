@@ -3,13 +3,13 @@ import { Pressable, Text, View, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { getTypeGradient } from '../constants/typeColors';
 
-type Props = {
+interface Props {
   id: number;
   name: string;
   image: string;
   types: string[];
   onPress: () => void;
-};
+}
 
 function PokemonCard({ id, name, image, types, onPress }: Props) {
   const [c1, c2] = getTypeGradient(types);

@@ -1,11 +1,11 @@
 import { ScrollView, View } from 'react-native';
 import Pill from './TypePill';
 
-type Props = {
+interface Props {
   types: string[];
   active: Set<string>;
   onToggle: (type: string) => void;
-};
+}
 
 export default function TypeFilterBar({ types, active, onToggle }: Props) {
   return (
