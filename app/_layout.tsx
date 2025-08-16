@@ -1,7 +1,23 @@
+import { Stack } from 'expo-router';
+import { Platform } from 'react-native';
 import '../global.css';
 
-import { Stack } from 'expo-router';
-
-export default function Layout() {
-  return <Stack />;
+export default function RootLayout() {
+  return (
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        animation: Platform.select({ ios: 'default', android: 'fade' }),
+      }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen
+        name="[id]"
+        options={{
+          presentation: 'modal',
+          headerShown: true,
+          title: 'Details',
+        }}
+      />
+    </Stack>
+  );
 }
